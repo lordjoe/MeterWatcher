@@ -18,7 +18,7 @@ public class LabelMakerDialog extends JDialog {
     private JTextField nameTextField;
     private JButton saveButton, cancelButton;
 
-    public LabelMakerDialog(Frame parent,ImageSource cm, Rectangle rect) {
+    public LabelMakerDialog(Frame parent,final ImageSource cm,final  Rectangle rect) {
         super(parent, "Labelm Dialog", true);
 
         // Icon at the top

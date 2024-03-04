@@ -19,7 +19,7 @@ public class WebCamPanel extends JPanel {
     private final ImageSource cm;
     private BufferedImage image;
 
-    public WebCamPanel(ImageSource cm) {
+    public WebCamPanel(final ImageSource cm) {
         this.cm = cm;
           Timer timer = new Timer(200, e -> updateImage());
         timer.start();

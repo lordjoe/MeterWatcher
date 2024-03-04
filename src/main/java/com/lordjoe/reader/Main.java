@@ -2,8 +2,6 @@ package com.lordjoe.reader;
 
 
 import org.json.JSONObject;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import javax.swing.*;
 import java.awt.*;
@@ -28,8 +26,7 @@ import static com.lordjoe.reader.DynamicTextImage.dynamic_main;
  */
 public class Main {
 
-    private final Logger logger = LoggerFactory.getLogger(Main.class);
-
+  
     public static final Properties watcherProperties = new Properties();
 
     public static Map<String,DataSource> sources = new HashMap<String,DataSource>();
