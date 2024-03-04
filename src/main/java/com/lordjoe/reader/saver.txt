@@ -1,0 +1,34 @@
+    // Timer to refresh the image
+      //  new Timer(50, e -> label.setIcon(new ImageIcon(webcam.getImage()))).start();
+
+        // Mouse listener to capture rectangle
+        MouseAdapter mouseAdapter = new MouseAdapter() {
+            Point startPoint = new Point(0,0);
+            boolean started;
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+                started = true;
+                startPoint = e.getPoint();
+            }
+            public void mouseMoved(MouseEvent e) {
+
+                Point myPoint = e.getPoint();
+                Rectangle selectedRectangle =
+                        new Rectangle(startPoint.x, startPoint.y, Math.abs(e.getX() - startPoint.x), Math.abs(e.getY() - startPoint.y));
+
+            }
+            @Override
+            public  void mouseReleased(MouseEvent e) {
+                Rectangle selectedRectangle = new Rectangle(startPoint.x, startPoint.y, Math.abs(e.getX() - startPoint.x), Math.abs(e.getY() - startPoint.y));
+
+                String inputName = JOptionPane.showInputDialog("Enter Name:");
+                if (inputName != null && !inputName.isEmpty()) {
+                    name = inputName;
+                    System.out.println("Selected Rectangle: " + selectedRectangle + " Name: " + name);
+                    // Here you can return the structure instead of printing
+                }
+            }
+        };
+           dragRect.addMouseListener(mouseAdapter);
+          dragRect.addMouseMotionListener(mouseAdapter);
