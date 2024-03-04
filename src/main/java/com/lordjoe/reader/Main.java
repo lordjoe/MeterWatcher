@@ -53,27 +53,7 @@ public class Main {
     }
 
 
-    private static void recognition(String[] args) {
-        TesseractHolder th =  TesseractHolder.getInstance() ;
-        String out = th.readImage(new File("05221859.png"));
-        System.out.println(out);
 
-        out = th.readImage(new File("Meter1Line.png"));
-        System.out.println(out);
-
-        out = th.readImage(new File("Meter1Line.jpeg"));
-        System.out.println(out);
-
-        out = th.readImage(new File("Meter3Lines.jpeg"));
-        System.out.println(out);
-
-        out = th.readImage(new File("nixie1954.jpeg"));
-        System.out.println(out);
-
-
-        out = th.readImage(new File("Nixie943_.jpg"));
-        System.out.println(out);
-    }
 
     private static void selection(String[] args) {
 
@@ -130,7 +110,7 @@ public class Main {
             conn.disconnect();
 
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("Server Error");
         }
     }
 
